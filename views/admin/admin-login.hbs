@@ -1,0 +1,61 @@
+<section class="text-dark" style="padding-top:120px;background-color: black;">
+  <div class="container bg-secondary pt-3" style="max-width: fit-content;border-radius: 5px;">
+    <h1 class="text-center" style="font-weight: bold;">Login</h1>
+    <hr>
+    <p class="text-center"> This page is only for administration ,not for public </p>
+    <div class="row">
+      <form class="pt-2" action="/admin/admin-login" method="post">
+        {{#if loginErr}}
+        <div class="alert alert-danger" role="alert">
+          {{loginErr}}
+        </div>
+        {{/if}}
+        <!-- Email input -->
+        <div class="form-outline mb-4">
+          <input name="Email" type="email" id="form2Example1" class="form-control" required />
+          {{!-- <li class="fa fa-envelope"></li> --}}
+          <label class="form-label" for="form2Example1">Email address</label>
+        </div>
+
+        <!-- Password input -->
+        <div class="form-outline mb-2">
+          <input name="Password" type="password" id="adminPwd" class="form-control" required />
+          {{!-- <li class="fa fa-key"></li> --}}
+          <label class="form-label" for="adminPwd">Password</label>
+        </div>
+
+        <!-- Show password -->
+        <div class="pb-3">
+          <input type="checkbox" onclick="showAdminPassword()"> show password
+        </div>
+        <!-- 2 column grid layout for inline styling -->
+        <div class="row mb-4">
+
+
+          <div class="col">
+            <!-- Simple link -->
+            <a href="#!" style="text-decoration: none;color: aliceblue;">Forgot password?</a>
+          </div>
+        </div>
+
+        <!-- Submit button -->
+        <button type="submit" class="btn btn-success btn-block mb-4">Sign in</button>
+        <a href="/admin/admin-register" class="btn btn-primary btn-block mb-4" style="float: right;">Register</a>
+
+      </form>
+    </div>
+  </div>
+</section>
+<section class="pt-5" style="background-color: black;">
+
+</section>
+<script>
+  function showAdminPassword() {
+    var p = document.getElementById("adminPwd");
+    if (p.type === "password") {
+      p.type = "text";
+    } else {
+      p.type = "password";
+    }
+  }
+</script>

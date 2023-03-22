@@ -1,0 +1,51 @@
+<section style="background-color: black;">
+  <div class="container " style="padding-top: 105px;">
+    <h1 class="text-center" style="font-weight: bold;color: rgb(172, 169, 169);">Activated Students</h1>
+    <hr>
+    <div class="row pt-3">
+      <a href="/admin/view-persons" class="btn btn-primary" style="width: fit-content;margin-left: auto;margin-right: 13px;">Back</a>
+      <div class="table-responsive pt-3">
+        <table class="table" border="5px" style="background-color:gray ;color: #fff;">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Course</th>
+              <th scope="col">Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Mobile</th>
+              <th scope="col">Password</th>
+              <th scope="col">Date & Time</th>
+              <th scope="col">Active</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            {{#each ActivePersons}}
+            <tr>
+              <th scope="row">></th>
+
+              <td>{{this.Coursedetails}}</td>
+              <td>{{this.Name}}</td>
+              <td>{{this.Email}}</td>
+              <td>{{this.Mobile}}</td>
+              <td>{{this.Password}}</td>
+              <td>{{this.ActiveDate}}</td>
+
+              <td style="color: green;">Activated</td>
+
+
+
+              <td>
+                <a href="/admin/delete-activepersons/{{this._id}}" class="btn btn-danger"
+                  onclick="return confirm('Are you want to delete this Student {{this.Name}}?')">Delete</a>
+
+              </td>
+
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

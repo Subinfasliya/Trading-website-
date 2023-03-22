@@ -1,0 +1,43 @@
+<section class="" style="padding-top: 30px;background-color: black;height: 780px;">
+    <div class="wrapper" style="align-items: center;background-color: gray;">
+        <div class="logo">
+            <img src="/images/Achu Trading.jpg" alt="">
+        </div>
+        <div class="text-center mt-4 name">
+            Login
+        </div>
+        <form class="p-3 mt-3" action="/login" method="post">
+            {{#if userloginErr}}
+            <div class="alert alert-danger" role="alert">
+                {{userloginErr}}
+            </div>
+            {{/if}}
+            <div class="form-field d-flex align-items-center ">
+                <i class="fas fa-user fa-lg me-1 fa-fw"></i>
+                <input type="email" class="form-control " name="Email" placeholder="Email" style="border-color: #fff;"
+                    required>
+            </div>
+            <div class="form-field d-flex align-items-center pt-3">
+                <i class="fas fa-key fa-lg me-1 fa-fw"></i>
+                <input type="password" class="form-control" name="Password" id="pwd" placeholder="Password" required>
+            </div>
+            <div style="padding-left: 18px;padding-top: 12px;">
+                <input type="checkbox" onclick="showPassword()"> Show password
+            </div>
+            <button class="btn mt-3 ">Login</button>
+        </form>
+        <div class="text-center fs-6 ">
+            <a href="/view-course" class="text-white">Back to View course</a>
+        </div>
+    </div>
+</section>
+<script>
+    function showPassword() {
+        var x = document.getElementById("pwd");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+</script>

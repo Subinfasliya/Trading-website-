@@ -1,0 +1,73 @@
+
+<section class="" style="background-color:black;">
+  <div class="container pt-5 pb-5">
+    <h1 class=" mb-4 pt-5 text-center" style="color: gray;font-weight: bold;">Add Videos</h1>
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-xl-9">
+      
+        <div class="card" style="border-radius: 15px;">
+          <div class="card-body">
+            <form action="/admin/add-videos" method="post" enctype="multipart/form-data">
+            <div class="row align-items-center pt-4 pb-3">
+              <div class="col-md-3 ps-5">
+
+
+                <h6 class="mb-0">Part</h6>
+
+              </div>
+              <div class="col-md-9 pe-5">
+
+                <input name="Part" type="text" class="form-control form-control-lg" required/>
+
+              </div>
+            </div>
+
+            <hr class="mx-n3">
+
+          
+
+            
+
+            <div class="row align-items-center py-3">
+              <div class="col-md-3 ps-5">
+
+                <h6 class="mb-0">Video details</h6>
+
+              </div>
+              <div class="col-md-9 pe-5">
+
+                <textarea name="About" class="form-control" rows="3" placeholder="Write about videos" required></textarea>
+
+              </div>
+            </div>
+
+            <hr class="mx-n3">
+
+            <div class="row align-items-center py-3">
+              <div class="col-md-3 ps-5">
+
+                <h6 class="mb-0">Upload video</h6>
+
+              </div>
+              <div class="col-md-9 pe-5">
+
+                <input name="Video" class="form-control form-control-lg"  type="file" required/>
+                <div class="small text-muted mt-2">Upload your video</div>
+
+              </div>
+            </div>
+
+            <hr class="mx-n3">
+
+            <div class="px-5 py-4">
+              <button type="submit" class="btn btn-success btn-lg">Upload</button>
+              <a href="/admin/admin-videos" class="btn  btn-lg btn-primary" style="float: right;color: rgb(233, 233, 233);">Back</a>
+            </div>
+          </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

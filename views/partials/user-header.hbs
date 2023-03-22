@@ -1,0 +1,46 @@
+<header class="headers-section " style="z-index: 2;width: 100%;position: fixed;">
+  <nav class="navbar navbar-expand-lg navbar-light  ">
+    <div class="container-fluid ">
+      <a class="navbar-brand text-white" href="/" style="font-weight: bold;">Trading <span
+          style="color: goldenrod;">House</span></a>
+      <button class="navbar-toggler" style="background-color:goldenrod;" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mb-2 mb-lg-0 ms-auto " style="margin-right: 21px;">
+          <li class="nav-item">
+            <a class="nav-link active text-white" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link text-white" href="#Services">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#Contact">Contact</a>
+          </li>
+          {{#if login}}
+          <li class="nav-item">
+            <a class="nav-link text-white text-center"
+              style="background-color: goldenrod;width: 80px;border-radius: 5px;" href="/login">Login</a>
+          </li>
+          {{/if}}
+
+        </ul>
+        {{#if person}}
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            {{person.Name}}
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/logout">Logout</a></li>
+
+          </ul>
+        </div>
+        {{/if}}
+      </div>
+    </div>
+  </nav>
+
+</header>

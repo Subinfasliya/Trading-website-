@@ -1,0 +1,51 @@
+<section class="" style="background-color: black;">
+  <div class="container  " style="padding-top: 105px;">
+    <h1 class="text-center" style="font-weight: bold;color: rgb(172, 169, 169);">Videos</h1>
+    <hr>
+
+    <div class="row pt-5">
+      <a href="/admin/view-persons" class="btn"
+        style="margin-bottom: 20px;width: fit-content;background-color: goldenrod;color: #fff;margin-left: 13px;">Registered Students</a>
+      <a href="/admin/add-videos" class="btn btn-primary "
+        style="margin-bottom: 20px;margin-left: auto;width: fit-content;margin-right: 13px;">Add video</a>
+      <div class="table-responsive">
+        <table class="table " border="5px" style="color:#fff;background-color:gray;">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Videos</th>
+              <th scope="col">Part</th>
+              <th scope="col">About</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each videos}}
+            <tr>
+              <th scope="row">></th>
+              <td><video width="50%" height="80%" src="/course-videos/{{this._id}}.mp4" controls></video></td>
+              <td>{{this.Part}}</td>
+              <td>{{this.About}}</td>
+
+
+
+
+
+
+              <td>
+                <a href="/admin/delete-video/{{this._id}}" class="btn btn-danger "
+                  onclick="return confirm('Are you want to delete this video ?')">Delete</a>
+              </td>
+
+
+            </tr>
+            {{/each}}
+          </tbody>
+      </div>
+      </table>
+    </div>
+
+  </div>
+</section>
+<section class="pt-5" style="background-color: black;">
+
+</section>

@@ -1,0 +1,90 @@
+<section style="background-color: black;">
+  <div class="container pt-5">
+    <div class="row">
+      <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+        <div class="container pt-5 pb-5">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+              <div class="card" style="border-radius: 5px;width: 100%;">
+                <div class="card-body p-5  bg-dark" style="border-radius: 8px;color: aliceblue;">
+                  <h2 class="text-uppercase text-center mb-5 " style="font-weight: bold;">Create an account</h2>
+                  <hr class="pb-3">
+
+                  <form action="/admin/admin-register" method="post">
+
+                    <div class="form-outline mb-4">
+                      <input type="text" name="Name" id="adminName" class="form-control form-control-lg" required />
+                      <i class="fa fa-user"></i>
+                      <label class="form-label" for="adminName">Your Name</label>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                      <input name="Email" type="email" id="adminEmail" class="form-control form-control-lg" required />
+                      <i class="fa fa-envelope"></i>
+                      <label class="form-label" for="adminEmail">Your Email</label>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                      <input type="password" id="AdminPassword" class="form-control form-control-lg" required />
+                      <i class="fa fa-lock"></i>
+                      <label class="form-label" for="AdminPassword">Password</label>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                      <input name="Password" type="password" id="AdminRepeatPassword"
+                        class="form-control form-control-lg" required />
+                      <i class="fa fa-key"></i>
+                      <label class="form-label" for="AdminRepeatPassword">Repeat your password</label>
+                    </div>
+                    <div class="form-outline mb-4">
+                      <input type="checkbox" onclick="showAdminRegisterPassword()"> Show password
+                    </div>
+
+
+                    <div class="d-flex justify-content-center">
+                      <button type="submit"
+                        class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Signup</button>
+                    </div>
+
+                    <p class="text-center  text-white mt-5 mb-0">Have already an account? <a href="/admin/admin-login"
+                        class="fw-bold text-body "><u class="text-white">Login here</u></a></p>
+
+                  </form>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<script>
+  var AdminPassword = document.getElementById("AdminPassword")
+    , AdminRepeatPassword = document.getElementById("AdminRepeatPassword");
+
+  function validatePassword() {
+    if (AdminPassword.value != AdminRepeatPassword.value) {
+      AdminRepeatPassword.setCustomValidity("Passwords Don't Match");
+    } else {
+      AdminRepeatPassword.setCustomValidity('');
+    }
+  }
+
+  AdminPassword.onchange = validatePassword;
+  AdminRepeatPassword.onkeyup = validatePassword;
+</script>
+<script>
+  function showAdminRegisterPassword() {
+    var A = document.getElementById('AdminRepeatPassword')
+    if (A.type === "password") {
+      A.type = "text"
+
+    } else {
+      A.type = "password"
+    }
+  }
+
+</script>

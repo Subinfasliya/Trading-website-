@@ -1,0 +1,32 @@
+<section style="background-color: black;color: #fff;">
+    <div class="container" style="padding-top: 95px;">
+        <div class="row">
+            <div class="col-md-4">
+
+                <h4>Join Date {{person.ActiveDate}}</h4>
+                <h1>{{person.Name}}</h1>
+                <h1></h1>
+
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container pt-5 ">
+        <div class="row">
+            <h1>First Section</h1>
+            {{#each videos}}
+            <div class="col-md-4 pt-3 ">
+                <div class="card">
+                    <video src="/course-videos/{{this._id}}.mp4" class="card-vdeo-top" alt="..." controls></video>
+                    <div class="card-body">
+                        <h5 class="card-title">{{this.Part}}</h5>
+                        <p class="card-text">{{this.About}}</p>
+
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</section>

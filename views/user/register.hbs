@@ -1,0 +1,116 @@
+<section style="background-color: black;">
+  <div class="container  py-5  text-center text-lg-start  ">
+    <div class="row gx-lg-5 align-items-center mb-5">
+      <div class="col-lg-6  " style="z-index: 10;margin-bottom: 6rem;">
+        <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
+          The best offer <br />
+          <span style="color: hsl(45, 90%, 35%)">for your carrier</span>
+        </h1>
+        <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+          Temporibus, expedita iusto veniam atque, magni tempora mollitia
+          dolorum consequatur nulla, neque debitis eos reprehenderit quasi
+          ab ipsum nisi dolorem modi. Quos?
+        </p>
+      </div>
+
+      <div class="col-lg-6 mb-5 mb-lg-0 position-relative pt-5 ">
+        <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+        <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+
+        <div class="card bg-dark text-white">
+          <div class="card-body px-4 py-5 px-md-5 ">
+            <h1 class="pb-3 text-center" style="font-weight: bold;">Register</h1>
+            <form action="/submit" method="post" enctype="application/x-www-form-urlencoded">
+              <input type="text" value="{{courseSelection}}" name="CourseDetails" hidden>
+              <!-- 2 column grid layout with text inputs for the Fullname and mobile number -->
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input type="text" name="Name" id="Name" class="form-control" required />
+                    <i class="fa fa-user" style="color: aliceblue;"></i>
+                    <label class="form-label" for="Name">Full name</label>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input type="tel" name="Mobile" id="Mobile" class="form-control" required />
+                    <i class="fa fa-mobile" style="color: aliceblue;"></i>
+                    <label class="form-label" for="Mobile">Mobile number</label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                <input type="email" name="Email" id="Email" class="form-control" required />
+                <i class="fa fa-envelope" style="color: aliceblue;"></i>
+                <label class="form-label" for="Email">Email address</label>
+              </div>
+
+              <!-- Password input -->
+              <div class="form-outline mb-4">
+                <input type="password" id="Password" class="form-control" required />
+                <i class="fa fa-lock" style="color: aliceblue;"></i>
+                <label class="form-label" for="Password">Password</label>
+              </div>
+
+              <!--Confirm Password input -->
+              <div class="form-outline mb-4">
+                <input type="password" name="Password" id="Confirm_Password" class="form-control" required />
+                <i class="fa fa-key" style="color: aliceblue;"></i>
+                <label class="form-label" for="Confirm_Password">Confirm Password</label>
+              </div>
+
+              <!-- Show password -->
+              <div class="form-outline mb-4">
+                <input type="checkbox" onclick="showRegisterPassword()"> Show password
+              </div>
+
+
+              <!-- Submit button -->
+              <button type="submit" class="btn btn-primary btn-block mb-4">
+                Sign up
+              </button>
+
+              <!-- Back button  -->
+              <a style="float: right;" href="/view-course">Back to view course</a>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="background-section pb-5" style="background-color: black;">
+
+</section>
+
+<script>
+  var Password = document.getElementById("Password")
+    , Confirm_Password = document.getElementById("Confirm_Password");
+
+  function validatePassword() {
+    if (Password.value != Confirm_Password.value) {
+      Confirm_Password.setCustomValidity("Passwords Don't Match");
+    } else {
+      Confirm_Password.setCustomValidity('');
+    }
+  }
+
+  Password.onchange = validatePassword;
+  Confirm_Password.onkeyup = validatePassword;
+
+</script>
+<script>
+  function showRegisterPassword() {
+    var r = document.getElementById('Confirm_Password')
+    if (r.type === "password") {
+      r.type = "text"
+
+    } else {
+      r.type = "password"
+    }
+  }
+
+</script>
